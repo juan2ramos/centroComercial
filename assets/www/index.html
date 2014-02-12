@@ -1,0 +1,183 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>CENTRO COMERCIAL</title>
+    
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map_canvas { height: 100% }
+</style>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.theme-1.3.0.min.css" />	
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
+   	<link rel="stylesheet" href="css/gapnote.css" />
+    
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.mobile-1.3.0.min.js"></script>
+	<script src="js/cordova-2.5.0.js"></script>
+   	<script src="js/gapnote.js"></script>
+
+</head>
+
+<body onload="initialize()"> 
+
+
+<!-- PAGINA PRINCIPAL-->
+<div data-role="page" id="principal" >
+	
+		<div data-role="header" data-position="fixed" data-theme="c" style="background:#ffffff" align="center">
+			<img src="img/CentroComercial.png" height="5%" width="10%">
+  </div><!-- /header -->
+	
+		<div data-role="content">
+		
+		  <div data-role="fieldcontain">
+		<select name="select-choice-1" id="select-choice-1">
+			<option value="bogota">Bogota</option>
+			<option value="cali">Cali</option>
+			<option value="medellin">Medellin</option>
+			<option value="cartagena">Cartagena</option>
+		</select>
+		</div>
+
+		<div data-role="fieldcontain">
+		
+		<select name="select-choice-1" id="select-choice-1" >
+			<option value="option1">Centro Comercial</option>
+			<option value="ccsantafe">CC Santa Fe</option>
+			<option value="ccbima">CC Bima</option>
+			<option value="cc80">CC Portal 80</option>
+			<option value="ccmayor">CC Centro Mayor</option>
+		</select>
+		</div>
+
+		<div data-role="fieldcontain">
+		
+		<select name="select-choice-1" id="select-choice-1">
+			<option value="bogota">Categoria</option>
+			<option value="cali">Calzado Dama</option>
+			<option value="medellin">Calzado Caballero</option>
+			<option value="cartagena">Comida</option>
+			<option value="cartagena">Ropa Niño</option>
+			<option value="cartagena">Ropa Hombre</option>
+			<option value="cartagena">Ropa Mujer</option>
+		</select>
+		</div>
+
+		<a href="index.html" data-role="button" data-icon="check" data-iconpos="right" data-mini="true" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c">    BUSCAR    </a>
+			
+          <p>&nbsp;</p>
+			
+	  </div><!-- /content -->
+	
+		<footer data-role="footer" data-position="fixed">
+			    <div data-role="navbar" data-iconpos="top" > <!-- /BOTONES  -->
+			        <ul>
+			            <li><a href="#principal"   data-iconpos="top" data-icon="home" data-theme="a">CENTRO COMERCIAL</a></li>
+			            <li><a href="#cronometro" data-iconpos="top" data-icon="grid" data-theme="c">Cronometro</a></li>
+                       <li><a href="#geo" data-iconpos="top" data-icon="search" data-theme="b">GEO</a></li>
+			        </ul>
+			    </div><!-- /navbar -->	
+		</footer><!-- /footer -->
+	</div><!-- /page -->
+	
+<!-- PAGINA CRONOMETRO	-->
+
+<div data-role="page" id="cronometro">
+	
+		<div data-role="header" data-position="fixed" data-theme="c">
+			<h1>CRONOMETRO</h1>
+		</div>
+		<div data-role="content">
+        <form id="frm1" name="frm1">
+        
+        <div data-role="fieldcontain" class="ui-hide-label">
+<!--            <label for="buscar">Buscar:</label>-->
+            <input type="text" name="buscar" id="buscar" value="" placeholder="Buscar Parqueadero"/>
+        </div>
+        
+        <div data-role="fieldcontain"  class="ui-hide-label">
+            <input type="time" name="time" id="time" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  />
+        </div>
+        
+        <div data-role="fieldcontain">
+<!--        <label for="textarea">Textarea:</label> -->
+            <textarea name="textarea" id="textarea"></textarea>
+        </div>
+<!--    BOTONES ACEPTAR y CANCELAR -->
+        
+        <a href="index.html" data-role="button" data-icon="check" data-iconpos="right" data-mini="true" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c">ACEPTAR</a>
+        <a href="index.html" data-role="button" data-icon="delete" data-iconpos="right" data-mini="true" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="b">CANCELAR</a>
+        </p>
+        </form>
+        
+        
+    <!--      
+       <div data-role="fieldcontain" align="center">
+               <label for="select-choice-1" class="select">Pruebas Pantallas:</label>
+               <select name="transition" id="transition" data-theme="c">
+                  <option value="none">Sin transicion</option>
+                  <option value="fade">FADE</option>
+                  <option value="slide">Slide</option>
+                  <option value="turn">Turn</option>
+                  <option value="flip">Flip</option>
+               </select>
+            </div>
+          
+            <div data-role="fieldcontain">
+               <label for="select-choice-1" class="select">Lista Parqueaderos:</label>
+               <select name="select-choice-1" id="select-choice-1">
+                  <option value="standard">Standard: 7 day</option>
+                  <option value="rush">Rush: 3 days</option>
+                  <option value="express">Express: next day</option>
+                  <option value="overnight">Overnight</option>
+               </select>
+            </div>
+            -->
+</div><!-- /content -->
+	
+		<footer data-role="footer" data-position="fixed">
+			    <div data-role="navbar" data-iconpos="top">
+			        <ul>
+			            <li><a href="#principal"   data-iconpos="top" data-icon="home" data-theme="b">Ubicación</a></li>
+			            <li><a href="#cronometro" data-iconpos="top" data-icon="grid" data-theme="c">Cronometro</a></li>
+                       <li><a href="#geo" data-iconpos="top" data-icon="search" data-theme="b">GEO</a></li>
+			        </ul>
+			    </div><!-- /navbar -->	
+		</footer><!-- /footer -->
+	</div><!-- /page -->
+ 
+<!-- PAGINA GPS -->
+    
+<div data-role="page" id="geo">
+	
+		<div data-role="header" data-position="fixed" data-theme="c">
+			<h1>GEOUBICACION</h1>
+		</div>
+  <div data-role="content">
+  <p>Watching geolocation...</p>
+  <div id="map_canvas" style="width:100%; height:90%"></div>
+  <button onClick="mostrarUbicacion()"> mostrar mi ubicacion </button>
+
+	  </div><!-- /content -->
+	
+		<footer data-role="footer" data-position="fixed">
+			    <div data-role="navbar" data-iconpos="top" > <!-- /BOTONES  -->
+			        <ul>
+	                <li><a href="#principal"   data-iconpos="top" data-icon="home" data-theme="b">Ubicación</a></li>
+			            <li><a href="#cronometro" data-iconpos="top" data-icon="grid" data-theme="c">Cronometro</a></li>
+                       <li><a href="#geo" data-iconpos="top" data-icon="search" data-theme="b">GEO</a></li>
+			        </ul>
+			    </div><!-- /navbar -->	
+		</footer><!-- /footer -->
+	</div><!-- /page -->
+    
+    
+</body>
+</html>
